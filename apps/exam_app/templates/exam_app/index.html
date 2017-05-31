@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exam</title>
+      {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'exam_app/style.css' %}">
+  </head>
+  <body>
+
+    <div id="wraper">
+      <div id="leftpage">
+          <h1>Register</h1>
+          <form action="/register" method="post">
+             {% csrf_token %}
+            <label for="">First name: <input class="box" type="text" name="first_name"> </label>
+            <label for="">Last name: <input class="box" type="text" name="last_name"> </label>
+            <label for="">E-mail: <input class="box" type="text" name="email"> </label>
+            <label for="">Password: <input class="box" type="password" name="password"> </label>
+            <label for="">Confirm password: <input class="box" type="password" name="confirmpassword"> </label>
+            <label for=""><input class="box" type="submit" name="register" value="Register"> </label>
+          </form>
+      </div>
+      <div id="rightpage">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+          {% csrf_token %}
+          <label for="">E-mail: <input class="box" type="text" type="text" name="email"> </label>
+          <label for="">Password: <input class="box" type="password" name="password"> </label>
+          <!-- <label for="">Confirm password: <input type="text" name="confirmpassword"> </label> -->
+          <label for=""><input class="box" type="submit" name="login" value="Log In"></label>
+        </form>
+      </div>
+    </div>
+    {% if messages %}
+        {% for message in messages %}
+          <ul>
+              <li>{{message}}</li>
+          </ul>
+        {% endfor %}
+    {% endif%}
+  </body>
+</html>

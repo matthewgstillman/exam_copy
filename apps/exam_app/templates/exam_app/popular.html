@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exam</title>
+      {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'exam_app/style.css' %}">
+  </head>
+    <body>
+      <h2>Popular Secrets: </h2>
+      {% for secret in secrets%}
+        {{secret.content}} | ({{secret.created_at}}) {{secret.likers.all.count}}   likes
+        {% if secret.user == currentuser %}
+          <a href="/delete/{{secret.id}}/pop"> Delete</a><br>
+        {% elif currentuser in secret.likers.all %}
+          <strong>You liked this before!</strong><br>
+        {% else %}
+          <a href="/like/{{secret.id}}/pop"> Like</a><br>
+        {% endif %}<br>
+      {% endfor %}<br>
+      <a href="/secrets">Back To Secrets</a>
+    </body>
+  </html>

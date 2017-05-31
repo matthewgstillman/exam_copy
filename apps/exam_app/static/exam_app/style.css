@@ -1,0 +1,47 @@
+h1 {
+  color: red;
+}
+
+#wraper {
+  width: 600px;
+}
+
+#leftpage {
+  vertical-align: top;
+  width: 270px;
+  display: inline-block;
+  border: 1px solid black;
+  margin-right: 5px;
+  padding: 5px;
+}
+#rightpage {
+  padding: 5px;
+  vertical-align: top;
+  display: inline-block;
+  width: 270px;
+  border: 1px solid black;
+}
+
+input {
+  border: 1px solid black;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+label {
+  /*float: right;*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  /*background-color: blue;*/
+  display: block;
+}
+
+/*form{
+  background-color: silver;
+}*/
+.box{
+  float: right;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
